@@ -110,10 +110,30 @@ console.log(`ticket price total is: ${ticketPriceTotal}`);
 
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  
+//I want you to think of potential problems you could solve given the data set and the 5k fun run theme. 
+// Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1: The director needs to print the ID and company of every person in the race.
 
-// Problem 2
+let backOfShirt = runners.forEach(function(item) {
+    console.log(`ID: ${item.id} \n ${item.company_name}`);
+})
 
-// Problem 3
+// Problem 2: The director needs to send an email to everyone with an odd number ID. Grab their information.
+
+let oddEmail = runners.filter(function(item){
+    if(item.id % 2 !== 0) {
+        console.log(item);
+    }
+})
+
+console.log(oddEmail);
+
+// Problem 3: The director needs to sum up all of the ID numbers. Use the reduce method to do this.
+
+let reduceId = runners.reduce(function(total, runner){
+    return total + runner.id;
+},0);
+
+console.log(reduceId);
